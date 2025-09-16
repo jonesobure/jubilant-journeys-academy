@@ -366,7 +366,7 @@ export default function App() {
             <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Get in Touch</h2>
             <p className="mt-3 text-slate-600">We'd love to meet you and your child. Reach out to plan a visit or ask any questions.</p>
             <div className="mt-6 space-y-4">
-              <p className="flex items-start gap-3 text-slate-700"><MapPin className="mt-0.5 h-5 w-5 text-rose-700" /> 123 Learning Lane, Education District</p>
+              <p className="flex items-start gap-3 text-slate-700"><MapPin className="mt-0.5 h-5 w-5 text-rose-700" /> Ekerubo, Kisii</p>
               <p className="flex items-start gap-3 text-slate-700"><Phone className="mt-0.5 h-5 w-5 text-rose-700" /> +254 706204839 </p>
               <p className="flex items-start gap-3 text-slate-700"><Mail className="mt-0.5 h-5 w-5 text-rose-700" /> admissions@jubilantjourneys.ac.ke</p>
             </div>
