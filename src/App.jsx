@@ -344,7 +344,7 @@ export default function App() {
               </ul>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a href="#contact" className="inline-flex items-center rounded-xl bg-rose-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-rose-800">Contact Admissions</a>
-                <button onClick={() => setShowLogin(true)} className="inline-flex items-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:border-rose-400 hover:text-rose-700">Parent Portal Login</button>
+                <button onClick={() => setShowLogin(true)} className="inline-flex items-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:border-rose-400 hover:text-rose-700">Teachers/Admin Portal Login</button>
               </div>
             </div>
             <div className="relative">
