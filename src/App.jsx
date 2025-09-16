@@ -436,9 +436,9 @@ export default function App() {
             <div>
               <h4 className="text-sm font-semibold text-slate-900">Contact</h4>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-rose-700" /> +254 700 000 000</li>
+                <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-rose-700" /> +254 706204839</li>
                 <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-rose-700" /> info@jubilantjourneys.ac.ke</li>
-                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-700" /> 123 Learning Lane</li>
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-700" /> Ekerubo, Kisii</li>
               </ul>
             </div>
           </div>
