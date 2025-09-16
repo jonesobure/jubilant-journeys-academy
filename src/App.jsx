@@ -47,7 +47,7 @@ export default function App() {
         "Play-based learning & routines",
         "Safe, caring environment",
       ],
-    }
+    },
     {
       title: "PP2",
       subtitle: "Ages 5–6",
@@ -56,6 +56,8 @@ export default function App() {
         "Play-based learning & routines",
         "Safe, caring environment",
       ],
+
+    },
     {
       title: "Grade 1",
       subtitle: "Ages 7–8",
