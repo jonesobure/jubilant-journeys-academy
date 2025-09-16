@@ -20,7 +20,11 @@ import {
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [authError, setAuthError] = useState('');
   const SCHOOL_IMG = "/students-group.jpg"; // Place your uploaded photo in the public/ folder with this name
+  
 
   const nav = [
     { label: "Home", href: "#home" },
@@ -114,6 +118,14 @@ export default function App() {
       ],
     },
   ];
+async function handleLogin(e) {
+  e.preventDefault();
+  setAuthError('');
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) { setAuthError(error.message); return; }
+  window.location.hash = '#admin';     // simple navigate
+  setShowLogin(false);                  // close modal
+}
 
   return (
     <div id="top" className="min-h-screen bg-gradient-to-b from-rose-50 to-white text-slate-800">
