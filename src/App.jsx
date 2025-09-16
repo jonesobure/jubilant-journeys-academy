@@ -32,7 +32,7 @@ export default function App() {
   const grades = [
     {
       title: "Playgroup",
-      subtitle: "Ages 3–5",
+      subtitle: "Ages 3–4",
       points: [
         "Foundational literacy & numeracy",
         "Play-based learning & routines",
@@ -40,8 +40,25 @@ export default function App() {
       ],
     },
     {
+      title: "PP1",
+      subtitle: "Ages 4–5",
+      points: [
+        "Foundational literacy & numeracy",
+        "Play-based learning & routines",
+        "Safe, caring environment",
+      ],
+    }
+    {
+      title: "PP2",
+      subtitle: "Ages 5–6",
+      points: [
+        "Foundational literacy & numeracy",
+        "Play-based learning & routines",
+        "Safe, caring environment",
+      ],
+    {
       title: "Grade 1",
-      subtitle: "Ages 6–7",
+      subtitle: "Ages 7–8",
       points: [
         "Phonics & reading readiness",
         "Number sense & patterns",
@@ -50,7 +67,7 @@ export default function App() {
     },
     {
       title: "Grade 2",
-      subtitle: "Ages 7–8",
+      subtitle: "Ages 8–9",
       points: [
         "Fluency & comprehension",
         "Problem solving in math",
@@ -59,7 +76,7 @@ export default function App() {
     },
     {
       title: "Grade 3",
-      subtitle: "Ages 8–9",
+      subtitle: "Ages 9–10",
       points: [
         "Project-based learning",
         "Science discovery labs",
@@ -68,7 +85,7 @@ export default function App() {
     },
     {
       title: "Grade 4",
-      subtitle: "Ages 9–10",
+      subtitle: "Ages 10–11",
       points: [
         "Research & presentations",
         "Fractions & geometry",
@@ -77,7 +94,7 @@ export default function App() {
     },
     {
       title: "Grade 5",
-      subtitle: "Ages 10–11",
+      subtitle: "Ages 11–12",
       points: [
         "STEM & creative writing",
         "Data & measurement",
@@ -86,7 +103,7 @@ export default function App() {
     },
     {
       title: "Grade 6",
-      subtitle: "Ages 11–12",
+      subtitle: "Ages 12–13",
       points: [
         "Exam readiness & leadership",
         "Pre-algebra concepts",
@@ -102,7 +119,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4" />
-            <p>Admissions now open for Playgroup & Grades 1–6 • Term 1</p>
+            <p>Admissions now open for Playgroup, PP1, PP2 & Grades 1–6 </p>
           </div>
           <a
             href="#admissions"
@@ -348,7 +365,7 @@ export default function App() {
             <p className="mt-3 text-slate-600">We'd love to meet you and your child. Reach out to plan a visit or ask any questions.</p>
             <div className="mt-6 space-y-4">
               <p className="flex items-start gap-3 text-slate-700"><MapPin className="mt-0.5 h-5 w-5 text-rose-700" /> 123 Learning Lane, Education District</p>
-              <p className="flex items-start gap-3 text-slate-700"><Phone className="mt-0.5 h-5 w-5 text-rose-700" /> +254 700 000 000</p>
+              <p className="flex items-start gap-3 text-slate-700"><Phone className="mt-0.5 h-5 w-5 text-rose-700" /> +254 706204839 </p>
               <p className="flex items-start gap-3 text-slate-700"><Mail className="mt-0.5 h-5 w-5 text-rose-700" /> admissions@jubilantjourneys.ac.ke</p>
             </div>
           </div>
@@ -435,7 +452,7 @@ export default function App() {
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-xl font-extrabold text-slate-900">Parent/Student Login</h3>
+                <h3 className="text-xl font-extrabold text-slate-900">Teacher /Admin Login</h3>
                 <p className="mt-1 text-sm text-slate-600">Access your portal to view updates, fees, and results.</p>
               </div>
               <button
