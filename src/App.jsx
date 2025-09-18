@@ -20,7 +20,26 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const SCHOOL_IMG = "/students-group.jpg"; // Place your uploaded photo in the public/ folder with this name
+  // Login states
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("teacher"); 
+    const [showRegister, setShowRegister] = useState(false);// default role
 
+  // Login handler
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (role === "admin" && email === "admin@example.com" && password === "admin123") {
+      alert("✅ Admin login successful!");
+      setShowLogin(false);
+    } else if (role === "teacher" && email === "teacher@example.com" && password === "teacher123") {
+      alert("✅ Teacher login successful!");
+      setShowLogin(false);
+    } else {
+      alert("❌ Invalid credentials for " + role);
+    }
+  };
   const nav = [
     { label: "Home", href: "#home" },
     { label: "Classes", href: "#classes" },
@@ -160,7 +179,8 @@ export default function App() {
                 className="inline-flex items-center rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:border-rose-400 hover:text-rose-700"
               >
                 Login
-              </button>
+              </button
+              >
               <a
                 href="#admissions"
                 className="inline-flex items-center rounded-xl bg-rose-700 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-rose-800"
@@ -466,22 +486,59 @@ export default function App() {
               </button>
             </div>
             <form onSubmit={handleLogin} className="mt-4 space-y-4">
-              <div>
-                <label className="text-sm font-medium text-slate-700">Email</label>
-                <input type="email" required className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring" placeholder="you@example.com" />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-slate-700">Password</label>
-                <input type="password" required className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring" placeholder="••••••••" />
-              </div>
-              <button className="w-full rounded-xl bg-rose-700 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-rose-800">
-                Login
-              </button>
-              <div className="flex items-center justify-between text-xs text-slate-600">
-                <a href="#" className="hover:text-rose-700">Forgot password?</a>
-                <a href="#" className="hover:text-rose-700">Create account</a>
-              </div>
-            </form>
+  {/* Role Selection */}
+  <div>
+    <label className="text-sm font-medium text-slate-700">Role</label>
+    <select
+      value={role}
+      onChange={(e) => setRole(e.target.value)}
+      className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring"
+    >
+      <option value="teacher">Teacher</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+
+  {/* Email */}
+  <div>
+    <label className="text-sm font-medium text-slate-700">Email</label>
+    <input
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring"
+      placeholder="you@example.com"
+    />
+  </div>
+
+  {/* Password */}
+  <div>
+    <label className="text-sm font-medium text-slate-700">Password</label>
+    <input
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+      className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring"
+      placeholder="••••••••"
+    />
+  </div>
+
+  {/* Submit */}
+  <button
+    type="submit"
+    className="w-full rounded-xl bg-rose-700 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-rose-800"
+  >
+    Login as {role.charAt(0).toUpperCase() + role.slice(1)}
+  </button>
+
+  {/* Links */}
+  <div className="flex items-center justify-between text-xs text-slate-600">
+    <a href="#" className="hover:text-rose-700">Forgot password?</a>
+    <a href="#" className="hover:text-rose-700">Create account</a>
+  </div>
+</form>
           </div>
         </div>
       )}
