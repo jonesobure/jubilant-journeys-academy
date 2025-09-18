@@ -1,0 +1,14 @@
+README (setup)
+
+Copy this folder as backend/ and create .env from .env.example
+
+Ensure MariaDB has DB jubilant and a user with access (see earlier SQL)
+
+Install & migrate:
+  cd backend
+  npm i
+  npx prisma migrate dev --name init
+  npm run dev
+#create first user 
+  curl -X POST http://localhost:4000/api/auth/bootstrap
+
