@@ -2,6 +2,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/<cpanel-user>/public_html/
-    # assumes 'dist/' already exists in the repo or was built on the server
-    - /bin/rsync -a --delete dist/ "$DEPLOYPATH"
+    - export PATH="/opt/cpanel/ea-nodejs20/bin:$PATH"
+    - cd /home/unhscoke/repositories/jubilant
+    - npm ci
+    - npm run build
+    - /bin/rsync -a --delete dist/ /home/unhscoke/public_html/
