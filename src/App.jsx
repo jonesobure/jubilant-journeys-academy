@@ -1,4 +1,3 @@
-import { supabase } from './lib/supabaseClient';
 import React, { useState } from "react";
 import {
   GraduationCap,
