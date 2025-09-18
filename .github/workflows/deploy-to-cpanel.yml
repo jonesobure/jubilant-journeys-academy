@@ -1,0 +1,50 @@
+# .github/workflows/deploy-to-cpanel.yml
+name: Build & Deploy to cPanel
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (Vite)
+        run: npm run build
+
+      - name: Deploy via (F)TPS to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps              # use 'ftp' if your host doesn't support FTPS
+          port: 21                    # or 990 for implicit FTPS (ftps-legacy)
+          local-dir: dist/            # Vite output
+          server-dir: public_html/    # change if deploying to a subfolder
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+          # dry-run: true             # uncomment to test without uploading
