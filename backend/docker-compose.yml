@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+mariadb:
+image: mariadb:11
+environment:
+MARIADB_ROOT_PASSWORD: root
+MARIADB_DATABASE: jubilant
+MARIADB_USER: jubilant_user
+MARIADB_PASSWORD: super_secret
+ports:
+- "3306:3306"
+volumes:
+- db_data:/var/lib/mysql
+phpmyadmin:
+image: phpmyadmin:latest
+environment:
+PMA_HOST: mariadb
+ports:
+- "8081:80"
+volumes:
+db_data:
