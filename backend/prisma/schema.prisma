@@ -1,0 +1,57 @@
+generator client { provider = "prisma-client-js" }
+id String @id @default(cuid())
+studentId String
+termId String?
+invoiceId String?
+amount Decimal @db.Decimal(12,2)
+currency String @default("KES")
+status PaymentStatus @default(PENDING)
+source PaymentSource @default(API)
+method String
+provider String?
+transactionRef String?
+dedupeKey String? @unique
+paidAt DateTime @default(now())
+createdAt DateTime @default(now())
+createdById String?
+student Student @relation(fields: [studentId], references: [id])
+term SchoolTerm? @relation(fields: [termId], references: [id])
+invoice Invoice? @relation(fields: [invoiceId], references: [id])
+createdBy User? @relation("PaymentCreatedBy", fields: [createdById], references: [id])
+@@index([studentId, paidAt])
+@@index([method, status, paidAt])
+@@index([transactionRef])
+@@index([termId])
+@@index([invoiceId])
+@@unique([provider, transactionRef], name: "provider_txnref_unique")
+}
+
+
+model FeeAdjustment {
+id String @id @default(cuid())
+studentId String
+termId String
+type AdjustmentType
+amount Decimal @db.Decimal(12,2)
+reason String?
+grantedById String
+grantedAt DateTime @default(now())
+student Student @relation(fields: [studentId], references: [id])
+term SchoolTerm @relation(fields: [termId], references: [id])
+grantedBy User @relation("AdjustmentGrantedBy", fields: [grantedById], references: [id])
+@@index([studentId, termId, type])
+}
+
+
+model OutboundSms {
+id String @id @default(cuid())
+toPhone String
+body String
+relatedType String?
+relatedId String?
+status String @default("QUEUED")
+error String?
+sentAt DateTime?
+createdAt DateTime @default(now())
+@@index([toPhone, status])
+}
