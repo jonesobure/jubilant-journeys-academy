@@ -1,0 +1,7 @@
+# .cpanel.yml
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/<cpanel-user>/public_html/
+    # assumes 'dist/' already exists in the repo or was built on the server
+    - /bin/rsync -a --delete dist/ "$DEPLOYPATH"
