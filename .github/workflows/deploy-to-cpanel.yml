@@ -37,8 +37,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          username: ${{ unhscoke }}
+          password: ${{ '#J_Pearl@254$' }}
           protocol: ftps              # use 'ftp' if your host doesn't support FTPS
           port: 21                    # or 990 for implicit FTPS (ftps-legacy)
           local-dir: dist/            # Vite output
