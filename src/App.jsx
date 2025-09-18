@@ -465,7 +465,11 @@ export default function App() {
                 <X className="h-5 w-5" />
               </button>
             </div>
+<<<<<<< HEAD
             <form onSubmit={handleLogin} className="mt-4 space-y-4">
+=======
+            <form onSubmit={(e) => e.preventDefault()} className="mt-4 space-y-4">
+>>>>>>> parent of 89ddacd (Update App.jsx)
               <div>
                 <label className="text-sm font-medium text-slate-700">Email</label>
                 <input type="email" required className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-rose-200 focus:ring" placeholder="you@example.com" />
