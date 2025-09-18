@@ -1,12 +1,11 @@
-# .cpanel.yml  (commit this at the repo root)
+# .cpanel.yml
 ---
 deployment:
   tasks:
-    # 1) make sure npm/node are available on this server
+    - set -euo pipefail
     - export PATH="/opt/cpanel/ea-nodejs20/bin:$PATH"
-    # 2) build the site in the cPanel-managed clone
+    - node -v && npm -v
     - cd /home/unhscoke/repositories/jubilant
-    - npm ci
+    - npm ci --no-audit --no-fund --progress=false
     - npm run build
-    # 3) publish the build to your web root
-    - /bin/rsync -a --delete dist/ /home/unhscoke/public_html/
+    - /bin/rsync -ah --delete dist/ /home/unhscoke/public_html/
