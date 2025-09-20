@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from "react";
 import {
   GraduationCap,
@@ -555,5 +556,16 @@ function Feature({ icon: Icon, title, text }) {
       <h3 className="mt-3 text-lg font-bold text-slate-900">{title}</h3>
       <p className="mt-1 text-sm text-slate-600">{text}</p>
     </div>
+=======
+// src/App.jsx
+import BalancesTable from './components/BalancesTable';
+
+export default function App() {
+  return (
+    <main style={{ padding: 16 }}>
+      <h1>Balances</h1>
+      <BalancesTable cls="Grade 4" stream="Zion" />
+    </main>
+>>>>>>> Stashed changes
   );
 }
